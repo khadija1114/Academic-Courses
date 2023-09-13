@@ -3,11 +3,11 @@ using namespace std;
 map<int, char> lw, up;
 
 
-string Caesar_cipher(string s, int k)
+string Monoalphabetic_cipher(string s)
 {
 	for (auto &it: s) {
-		if (it >= 'a' && it <= 'z') it = lw[(it - 'a'  + k + 26) % 26];
-		else if (it >= 'A' && it <= 'Z') it = up[(it - 'A'  + k + 26) % 26];
+		if (it >= 'a' && it <= 'z') it = lw[(it - 'a')];
+		else if (it >= 'A' && it <= 'Z') it = up[(it - 'A' )];
 	}
 
 	return s;
@@ -25,15 +25,11 @@ int main()
 		up[i] = k1[i];
 	}
 
-	for (auto it: lw) {
-		cout << it.first << " " << it.second << endl;
-	}
-	for (auto it: up) {
-		cout << it.first << " " << it.second << endl;
-	}
+	//for (auto it: lw) cout << it.first << " " << it.second << endl;
+	//for (auto it: up) cout << it.first << " " << it.second << endl;
 
 	string s; cout << "message: ";getline(cin, s);
-	string cipher_text = Caesar_cipher(s, 0);
-	cout << "Caeser cipher-text: " << cipher_text << endl;
+	string cipher_text = Monoalphabetic_cipher(s);
+	cout << "Monoalphabetic cipher-text: " << cipher_text << endl;
 }
 
