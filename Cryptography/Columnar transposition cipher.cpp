@@ -49,17 +49,13 @@ int main()
     }
 
     string cipher = ""; p = 0;
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < col; j++) {
-            cipher += ch[i][finekey[p%col]-'0'];
-            p++;
+    for (int i = 0; i < col; i++) {
+        for (int j = 0; j < row; j++) {
+            cipher += ch[j][finekey[p%col]-'0'];
         }
+        p++;
     }
 
     cout << endl << cipher << endl;
-
-
-
-
 
 }
