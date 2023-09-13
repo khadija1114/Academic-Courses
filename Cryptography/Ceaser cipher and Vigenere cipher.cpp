@@ -31,13 +31,13 @@ string Vigenere(string s, string key)
 
 int main()
 {
-	int k; cout << "key: "; cin >> k;cin.ignore();
 	string s; cout << "message: ";getline(cin, s);
-	string key; cout << "key for vegenere: "; cin >> key;
+	int k; cout << "key for ceaser cipher: "; cin >> k;
+	string key; cout << "key for vegenere cipher: "; cin >> key;
 
 	string caesar = Caesar_cipher(s, k);
 	string vig = Vigenere(s, key);
 
-	cout << "caeser cipher-text: " << caesar << endl;
-	cout << "vigenere cipher-text: " << vig << endl;
+	cout << "Caeser Cipher-text: " << caesar << endl;
+	cout << "Vigenere Cipher-text: " << vig << endl;
 }
